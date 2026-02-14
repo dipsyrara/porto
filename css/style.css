@@ -1,0 +1,713 @@
+/* style.css */
+
+:root {
+    --primary-color: #f2b5b5; /* Dusty Pink */
+    --background-dark: #1a2e26; /* Dark Forest Green */
+    --background-section: #1a2e26;
+    --text-light: #f2b5b5;
+    --text-dark: #1a2e26;
+    --text-muted: rgba(242, 181, 181, 0.7); 
+    --font-header: 'Bungee', sans-serif;
+    --font-body: 'Space Mono', monospace;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Base & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-light);
+    background-color: var(--background-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Header Glassmorphism --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 25px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(26, 46, 38, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background: rgba(26, 46, 38, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(242, 181, 181, 0.3);
+}
+
+.logo {
+    font-family: var(--font-header);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav a {
+    color: var(--text-light);
+    margin: 0 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.nav a:hover {
+    opacity: 1;
+    color: white;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* --- Optimized Hero Section --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Memaksa foto tetap di dasar layar */
+    align-items: center;
+    position: relative;
+    background-color: var(--background-dark);
+    overflow: hidden;
+    /* Memberikan ruang kosong yang pasti untuk header */
+    padding-top: 120px; 
+}
+
+/* Layer Teks Besar (Background) */
+.hero-container {
+    position: absolute;
+    /* Mengunci posisi di tengah area konten, bukan di tengah viewport seluruhnya */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -40%); /* Sedikit geser ke bawah agar tidak kena header */
+    width: 100%;
+    z-index: 1; /* Di belakang foto */
+    text-align: center;
+    pointer-events: none; /* Agar tidak menghalangi klik pada elemen lain */
+}
+
+.big-title {
+    font-family: var(--font-header);
+    /* Ukuran responsif yang lebih terkontrol */
+    font-size: clamp(3rem, 12vw, 8rem); 
+    color: var(--primary-color);
+    line-height: 0.7;
+    margin: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: -2px;
+    position: relative; /* Penting untuk posisi bayangan */
+    z-index: 1;
+}
+
+/* --- Efek Gradasi Stack (Echo) --- */
+.main-text {
+    z-index: 3;
+    opacity: 1;
+}
+
+.echo-1 {
+    z-index: 2;
+    opacity: 0.4; /* Setengah transparan */
+    margin-top: -10px; /* Menumpuk sedikit ke bawah */
+}
+
+.echo-2 {
+    z-index: 1;
+    opacity: 0.15; /* Sangat transparan (hampir hilang) */
+    margin-top: -10px;
+}
+.hero-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1; /* Seluruh container teks tetap di belakang foto */
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Layer Foto (Foreground) */
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2; /* Di depan teks besar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 60vh; /* Menambah porsi foto agar lebih besar */
+}
+
+.hero-png {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    /* Efek kedalaman tanpa border */
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.6));
+}
+
+/* Meta Data & Details (UI Elements) */
+.hero-meta-top {
+    position: absolute;
+    top: 110px; /* Jarak aman di bawah header */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    z-index: 5;
+    color: var(--text-light);
+}
+
+.hero-details {
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    z-index: 5;
+    color: var(--text-light);
+}
+
+.meta-left { transform: rotate(-10deg); display: inline-block; }
+.meta-right { transform: rotate(5deg); display: inline-block; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero { padding-top: 80px; }
+    .hero-image-wrapper { height: 60vh; }
+    .big-title { font-size: 5rem; }
+    .hero-meta-top { top: 90px; }
+    .hero-details { 
+        flex-direction: column; 
+        gap: 10px; 
+        text-align: left; 
+        bottom: 20px;
+    }
+}
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-png { height: 50vh; }
+    .big-title { font-size: 4.5rem; }
+    .hero-details { flex-direction: column; gap: 10px; text-align: left; }
+}
+
+/* --- Section Artistik --- */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: var(--font-header);
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-transform: uppercase;
+}
+
+/* Layout About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Membagi bio lebih lebar dari expertise */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Base Card Style */
+.about-card {
+    background: #ffffff; /* Putih bersih agar formal */
+    color: #1a2e26;      /* Teks gelap agar kontras */
+    padding: 40px;
+    border-radius: 30px; /* Sudut melengkung besar sesuai referensi */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bio-card p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.expertise-card h3 {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #1a2e26;
+}
+
+/* Skills Layout di dalam Card */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: #1a2e26; /* Background kontras gelap */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px; /* Bentuk Pill */
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.skill-tag:hover {
+    background: transparent;
+    color: #1a2e26;
+    border-color: #1a2e26;
+    transform: translateY(-3px);
+}
+
+/* Container Utama dengan Grid yang lebih lebar */
+.experience-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Kolom kiri diperlebar agar judul tidak nabrak */
+    gap: 60px;
+    align-items: start;
+    padding-top: 80px;
+}
+
+.experience-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar-title {
+    font-family: var(--font-header);
+    font-size: 3rem; /* Ukuran besar sesuai contoh */
+    line-height: 0.9;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+/* Pengaturan Timeline di Kanan */
+.experience-timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Garis Vertikal Tengah - Dipindahkan agar pas di antara kolom */
+.timeline-v-line {
+    position: absolute;
+    left: 175px; /* Posisi tepat di tengah pembatas kolom time dan desc */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-color);
+    opacity: 0.3;
+}
+
+/* Pengaturan Baris dengan pembagian kolom yang kaku agar rapi */
+.timeline-row {
+    display: grid;
+    grid-template-columns: 150px 50px 1fr; /* [Tahun/Role] [Dot] [Deskripsi] */
+    margin-bottom: 75px;
+    align-items: start;
+}
+
+.time-column {
+    text-align: left; /* Teks tahun dan role rata kiri */
+}
+
+.time-column .year {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.time-column .role {
+    font-family: var(--font-header);
+    font-size: 0.95remrem;
+    color: white;
+    margin-top: 5px;
+    line-height: 1.3;
+}
+
+.dot-column {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    padding-top: 8px;
+}
+
+.timeline-dot-center {
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary-color);
+    border-radius: 2px; /* Kotak kecil sesuai referensi */
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.desc-column p {
+    font-family: var(--font-body); /* Space Mono */
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* Responsif untuk layar kecil (Tabrakan sering terjadi di sini) */
+@media (max-width: 1100px) {
+    .experience-layout {
+        grid-template-columns: 1fr; /* Tumpuk vertikal jika layar sempit */
+    }
+    .experience-sidebar {
+        position: static;
+        margin-bottom: 50px;
+    }
+    .timeline-v-line {
+        left: 20px; /* Geser garis ke kiri pada mobile */
+    }
+    .timeline-row {
+        grid-template-columns: 100px 40px 1fr;
+    }
+}
+
+/* Refined Description Column for Monospace Font */
+.desc-column p {
+    font-family: var(--font-body); /* Space Mono */
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    text-align: justify; /* Optional: for a cleaner block-text look */
+}
+
+/* Ensure the side roles don't overflow */
+.time-column .role {
+    word-wrap: break-word;
+    max-width: 170px;
+}
+
+/* --- Optimized Projects Horizontal Scroll with End-Stack --- */
+
+.projects-header {
+    margin-bottom: 50px;
+}
+
+.section-title-left {
+    font-family: var(--font-header);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-light);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* Container Utama Horizontal Scroll */
+.projects-horizontal-scroll {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0 40px 0;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    align-items: stretch; /* Memastikan semua kolom sama tinggi */
+}
+
+/* Custom Scrollbar */
+.projects-horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+.projects-horizontal-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Base Card Style */
+.project-bento-card {
+    min-width: 400px; 
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    transition: all 0.4s ease;
+    flex-shrink: 0; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-visual {
+    width: 100%;
+    height: 220px; 
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    font-family: 'Bungee', cursive;
+    padding: 30px 30px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: #1a2e26;
+}
+
+/* Judul Proyek: Playful & Bold dengan Bungee */
+.project-info h3 {
+    font-family: 'Bungee', cursive; 
+    font-size: 1.5rem;
+    color: #1a2e26;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+/* Label Status Repo: Tetap Bersih dengan Space Mono */
+.repo-status-inline {
+    font-family: 'Space Mono', monospace !important; /* Dikunci agar tidak ikut Bungee */
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    
+    /* Efek miring playful tetap dipertahankan */
+    transform: rotate(-2deg); 
+    transition: all 0.3s ease;
+}
+
+/* Deskripsi & Keterangan Lainnya */
+.project-info p, 
+.project-tech-stack span,
+.project-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+}
+
+/* Samakan tinggi kolom tumpuk dengan kartu utama */
+.projects-horizontal-scroll {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0 40px 0;
+    overflow-x: auto;
+    align-items: stretch; /* PENTING: Menarik semua item agar tingginya sama */
+}
+
+.projects-stack-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    flex-shrink: 0;
+    /* Menghilangkan min-height agar mengikuti container parent */
+}
+
+/* Card No-Image dan Coming Soon dalam Stack */
+.projects-stack-column .project-bento-card {
+    min-width: 100%;
+    max-width: 100%;
+    flex: 1; 
+}
+
+/* --- Penyesuaian Konten di Dalam Tumpukan --- */
+.projects-stack-column .project-info {
+    padding: 20px 25px; /* Padding vertikal dikurangi agar tidak memotong tombol */
+    justify-content: space-between; /* Judul di atas, Tombol di bawah */
+    height: 100%;
+}
+
+.projects-stack-column h3 {
+    font-family: 'Bungee', cursive;
+    font-size: 1.2rem !important; /* Ukuran diperkecil khusus kartu tumpuk agar proporsional */
+    margin-bottom: 5px;
+}
+
+.projects-stack-column p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem; /* Ukuran diperkecil agar tidak menabrak tombol */
+    line-height: 1.4;
+    margin-bottom: 10px;
+    /* Limit teks deskripsi maksimal 2 baris saja */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Playful Repo Status --- */
+.repo-status-inline {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    
+    /* Keadaan awal: Miring -2 derajat */
+    transform: rotate(-2deg); 
+    
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--primary-color);
+    width: fit-content;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Penyesuaian Status Repo di dalam kartu pink agar kontras */
+.status-more {
+    /* Gunakan background yang lebih gelap agar font pink/putih menonjol */
+    background: rgba(26, 46, 38, 0.2) !important; 
+    color: #1a2e26 !important; /* Warna teks hijau gelap agar kontras dengan pink kartu */
+    border: 1.5px solid rgba(26, 46, 38, 0.3) !important;
+    font-weight: 800;
+}
+
+/* Tambahkan efek ikon agar lebih hidup */
+.status-more i {
+    color: #1a2e26;
+    margin-right: 4px;
+}
+
+.status-private { color: #ff79c6; border-color: rgba(255, 121, 198, 0.3); }
+.status-public { color: #50fa7b; border-color: rgba(80, 250, 123, 0.3); }
+
+/* --- TAMBAHKAN EFEK ANIMASI HOVER DI BAWAH INI --- */
+
+/* Saat Kartu di-hover, label status akan tegak dan sedikit membesar */
+.project-bento-card:hover .repo-status-inline {
+    transform: rotate(0deg) scale(1.1);
+    background: var(--primary-color);
+    color: #1a2e26; /* Teks berubah gelap agar kontras dengan background pink/hijau */
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Warna spesifik saat hover agar kontras mengikuti jenis repo */
+.project-bento-card:hover .status-private {
+    background: #ff79c6;
+    box-shadow: 0 0 15px rgba(255, 121, 198, 0.5);
+}
+
+.project-bento-card:hover .status-public {
+    background: #50fa7b;
+    box-shadow: 0 0 15px rgba(80, 250, 123, 0.5);
+}
+/* --- Coming Soon Pink Card --- */
+.project-bento-card.coming-soon {
+    background-color: var(--primary-color) !important;
+    border: none;
+    text-align: center;
+    justify-content: center;
+}
+
+.coming-soon h3 {
+    color: #1a2e26 !important;
+    font-size: 1.5rem;
+}
+
+/* --- Youthful Futuristic Buttons --- */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    background: transparent;
+    color: #1a2e26;
+    border: 2px solid #1a2e26;
+    border-radius: 50px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: #1a2e26;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+}
+
+.project-link:hover::before { left: 0; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-bento-card, .projects-stack-column {
+        min-width: 85vw;
+    }
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid rgba(242, 181, 181, 0.2);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .container { width: 90%; }
+    .hero h1 { font-size: 3rem; }
+    .profile-pic { width: 200px; height: 260px; }
+}
