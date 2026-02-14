@@ -4,30 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuiltbyRara | Portfolio</title>
+    <title>builtbyrara ✦ futuristic playground</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loading Animation -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-menu">
+                <a href="#about">✦ About</a>
+                <a href="#experience">✦ Experience</a>
+                <a href="#projects">✦ Projects</a>
+                <a href="#contact">✦ Contact</a>
+            </div>
+            
+            <!-- Tombol Download CV -->
+            <a href="assets/cv-ragil.pdf" class="cv-button" download>
+                <i class="fas fa-file-pdf"></i>
+                <span>DOWNLOAD CV</span>
+                <i class="fas fa-download"></i>
+            </a>
+        </nav>
+    </div>
+</header>
 
     <main>
+        <!-- HERO SECTION -->
         <section id="hero" class="hero">
             <div class="hero-container">
                 <h1 class="big-title main-text">BUILT BY RARA</h1>
@@ -40,64 +63,69 @@
             </div>
 
             <div class="hero-details">
-                <div class="detail-info">S1 Teknologi Informasi<br><strong>RAGIL DEANTIKA ROHMANIAR</strong></div>
-                <div class="detail-year">2026</div>
+                <div class="detail-info">
+                    <i class="fas fa-star"></i> S1 Teknologi Informasi<br>
+                    <strong>RAGIL DEANTIKA ROHMANIAR</strong>
+                </div>
+                <div class="detail-year">'26</div>
             </div>
         </section>
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">ABOUT ME</h2>
 
-                <div class="about-grid">
-                    <div class="about-card bio-card">
-                        <p>
-                            Hi! I'm a solutions-oriented Information Technology student at Telkom University skilled in
-                            building fullstack web applications. My technical expertise is enhanced by proven leadership
-                            experience from a student organization, where I managed strategic events and streamlined
-                            operations
-                            with new SOPs.
-                        </p>
-                        <p>
-                            This unique blend of technical and managerial skills allows me to deliver comprehensive,
-                            effective
-                            solutions. I'm currently active on seeking the opportunities in Web/Frontend Development and
-                            Freelance Copywriting.
-                        </p>
-                    </div>
+        <!-- ABOUT SECTION - Compact Version -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">✦ ABOUT ME ✦</h2>
 
-                    <div class="about-card expertise-card">
-                        <h3>MY EXPERTISE</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">Laravel</span>
-                            <span class="skill-tag">Nuxt.js</span>
-                            <span class="skill-tag">Vue.js</span>
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Golang</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">Dart</span>
-                            <span class="skill-tag">Project Management</span>
-                            <span class="skill-tag">SOP Development</span>
-                        </div>
-                    </div>
+        <div class="about-grid">
+            <div class="about-card bio-card">
+                <p>
+                    <i class="fas fa-laptop-code" style="color: var(--primary);"></i>
+                    I'm an <strong>Information Technology</strong> student at Telkom University with a focus on <strong>web development and software engineering</strong>. I build full-stack applications using modern tools like Laravel, Vue.js, and Node.js then turning every ideas into functional digital products.
+                </p>
+                
+                <p>
+                    <i class="fas fa-users-cog" style="color: var(--primary);"></i>
+                    My experience extends beyond coding! Through student organizations, I've developed <strong>leadership and project management skills</strong>, leading teams and streamlining operations. This combination allows me to approach development with both technical precision and effective collaboration.
+                </p>
+                
+                <p>
+                    <i class="fas fa-paper-plane" style="color: var(--primary);"></i>
+                    I'm actively seeking opportunities in <strong>Web Development</strong> and <strong>Software Engineering</strong>. Whether it's building from scratch, contributing to open source, or joining an innovative team. I'm ready to make an impact!
+                </p>
+            </div>
+
+            <div class="about-card expertise-card">
+                <h3 style="font-family: var(--font-header); margin-bottom: 25px; text-align: center;">
+                    MY EXPERTISE
+                </h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">Nuxt.js</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Golang</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Flutter</span>
+                    <span class="skill-tag">Dart</span>
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">Web3</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
+        <!-- EXPERIENCE SECTION -->
         <section id="experience" class="section">
             <div class="container experience-layout">
-                <div class="experience-sidebar">
-                    <h2 class="sidebar-title">EXPERIENCES</h2>
-                </div>
+                <h2 class="sidebar-title">EXPERIENCES</h2>
 
                 <div class="experience-timeline">
-                    <div class="timeline-v-line"></div>
-
+                    <!-- Timeline Item 1 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2025</span>
@@ -107,13 +135,14 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">Yayasan Bhakti Wiyata</h4>
+                            <h4 class="company-name">✦ Yayasan Bhakti Wiyata</h4>
                             <p>Developing and maintaining websites using Node.js, TypeScript, Laravel, MySQL, and
                                 Vue.js. Contributed to front-end and back-end design, database integration, as well as
                                 performing testing, debugging, and performance optimization.</p>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 2 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2025</span>
@@ -123,13 +152,14 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">Central Computer Improvement</h4>
+                            <h4 class="company-name">✦ Central Computer Improvement</h4>
                             <p>Led a team of 30 committee members to organize a regional talkshow regarding Artificial
                                 Intelligence strategies in education. Managed collaboration with 4 industry speakers and
                                 designed digital promotion strategies reaching 100+ participants.</p>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 3 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2025</span>
@@ -139,12 +169,13 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">CCI Telkom University</h4>
+                            <h4 class="company-name">✦ CCI Telkom University</h4>
                             <p>Developing networking and operating system skills such as Kali Linux and Ubuntu. Applied
                                 DevOps concepts using Docker and VPS for application management and deployment.</p>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 4 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2025</span>
@@ -154,13 +185,14 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">HackAttack Academic Competition</h4>
+                            <h4 class="company-name">✦ HackAttack Academic Competition</h4>
                             <p>Managed all committee documents and meeting minutes. Coordinated communication among 50+
                                 committee members and relevant parties to ensure the competition ran smoothly according
                                 to schedule.</p>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 5 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2024</span>
@@ -170,13 +202,14 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">Megabit 7.0 - Himpunan Mahasiswa Teknologi Informasi</h4>
+                            <h4 class="company-name">✦ Megabit 7.0 - HMIT</h4>
                             <p>Led the planning and execution of the freshman orientation for 190+ new students.
                                 Facilitated cross-functional coordination with 5 lecturers and the head of the study
                                 program, and prepared evaluation reports for the faculty.</p>
                         </div>
                     </div>
 
+                    <!-- Timeline Item 6 -->
                     <div class="timeline-row">
                         <div class="time-column">
                             <span class="year">2024 - 2025</span>
@@ -186,7 +219,7 @@
                             <div class="timeline-dot-center"></div>
                         </div>
                         <div class="desc-column">
-                            <h4 class="company-name">Himpunan Mahasiswa Teknologi Informasi Telkom University</h4>
+                            <h4 class="company-name">✦ HMIT Telkom University</h4>
                             <p>Developed and optimized Standard Operating Procedures (SOPs) for various student
                                 activities. Enhanced team coordination through communication and event management
                                 training based on feedback from 200+ participants.</p>
@@ -195,165 +228,328 @@
                 </div>
             </div>
         </section>
+
+        <!-- PROJECTS SECTION - Updated with all improvements -->
         <section id="projects" class="section">
-    <div class="container">
-        <div class="projects-header">
-            <h2 class="section-title-left">PROJECTS</h2>
-        </div>
+            <div class="container">
+                <h2 class="section-title">✦ PROJECTS ✦</h2>
 
-        <div class="projects-horizontal-scroll">
-            
-            <div class="project-bento-card">
-                <div class="project-visual">
-                    <img src="assets/eventbhakta-preview.png" alt="EventBhakta">
-                </div>
-                <div class="project-info">
-                    <div class="repo-status-inline status-private">
-                        <i class="fas fa-user-secret"></i> Private Repository
-                    </div>
-                    <h3>EVENTBHAKTA</h3>
-                    <p>Foundation event management system with automated registration and a centralized admin dashboard.</p>
-                    <div class="project-footer">
-                        <div class="project-tech-stack">
-                            <span>NUXT.JS</span><span>LARAVEL</span><span>VUE.JS</span>
+                <div class="projects-horizontal-scroll">
+                    <!-- EventBhakta (Repo Only) -->
+                    <div class="project-bento-card">
+                        <div class="project-visual">
+                            <img src="assets/eventbhakta-preview.png" alt="EventBhakta">
+                            <div class="project-status-badge repo-only">
+                                <i class="fas fa-code-branch"></i> PRIVATE REPO
+                            </div>
                         </div>
-                        <a href="#" class="project-link">
-                            View Design <i class="fab fa-github"></i>
-                        </a>
+                        <div class="project-info">
+                            <h3>EVENTBHAKTA</h3>
+                            <p class="project-description">An automated system designed to streamline event registration and internal administration. Centralized dashboard for participant management.</p>
+                            <div class="project-tech-stack">
+                                <span>LARAVEL</span>
+                                <span>VUE.JS</span>
+                                <span>MYSQL</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="assets/docs/Front end Event (2).pdf" class="project-link repo-link" target="_blank" rel="noopener noreferrer">
+                                    VIEW DESIGN
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="project-bento-card">
-                <div class="project-visual">
-                    <img src="assets/ngopiyuk-preview.png" alt="NGOPIYUK">
-                </div>
-                <div class="project-info">
-                    <div class="repo-status-inline status-public">
-                        <i class="fas fa-globe-americas"></i> Public Repository
-                    </div>
+                    <!-- NGOPIYUK (Deployed) -->
+                    <div class="project-bento-card">
+                        <div class="project-visual">
+                            <img src="assets/ngopiyuk-preview.png" alt="NGOPIYUK">
+                            <div class="project-status-badge deployed">
+                                <i class="fas fa-globe"></i> LIVE DEMO
+                            </div>
+                        </div>
+                        <div class="project-info">
                     <h3>NGOPIYUK!</h3>
-                    <p>A specialized platform for coffee shop discovery and internal management system.</p>
+                    <p class="project-description">A specialized platform for coffee shop discovery and internal management. Find your favorite coffee spots with responsive experience.</p>
+                    <div class="project-tech-stack">
+                        <span>REACT.JS</span>
+                        <span>EXPRESS.JS</span>
+                        <span>CSS</span>
+                    </div>
                     <div class="project-footer">
-                        <div class="project-tech-stack">
-                            <span>VUE.JS</span><span>MYSQL</span><span>NODE.JS</span>
+                        <div class="button-group">
+                            <a href="https://ngopiyuk-frontend.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> VIEW DEMO
+                            </a>
+                            
+                            <!-- Dropdown untuk multiple repositories -->
+                            <div class="repo-dropdown">
+                                <button class="project-link repo-dropdown-btn">
+                                    <i class="fab fa-github"></i> 
+                                    <span class="repo-text">REPO</span>
+                                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                                </button>
+                                <div class="repo-dropdown-content">
+                                    <div class="dropdown-header">
+                                        <i class="fas fa-code-branch"></i> Select Repository
+                                    </div>
+                                    <a href="https://github.com/Zikra2244/ngopiyuk-frontend.git" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-react"></i> Frontend (React)
+                                        <span class="repo-badge">main</span>
+                                    </a>
+                                    <a href="https://github.com/Zikra2244/ngopiyuk-backend.git " target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-server"></i> Backend (Express)
+                                        <span class="repo-badge">api</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <a href="#" class="project-link">
-                            View Repository <i class="fab fa-github"></i>
-                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- VERICHAIN (Deployed dengan Multi Repo - DROPDOWN) -->
             <div class="project-bento-card">
                 <div class="project-visual">
                     <img src="assets/verichain-preview.png" alt="VERICHAIN">
+                    <div class="project-status-badge deployed">
+                        <i class="fas fa-globe"></i> LIVE DEMO
+                    </div>
                 </div>
                 <div class="project-info">
-                    <div class="repo-status-inline status-public">
-                        <i class="fas fa-globe-americas"></i> Public Repository
-                    </div>
                     <h3>VERICHAIN</h3>
-                    <p>Blockchain-based supply chain transparency and verification platform.</p>
+                    <p class="project-description">Digital verification platform transforming academic credentials into Real-World Assets (RWA) using ERC-721 NFTs with blockchain-based hashing.</p>
+                    <div class="project-tech-stack">
+                        <span>EXPRESS.JS</span>
+                        <span>REACT.JS</span>
+                        <span>SUPABASE</span>
+                        <span>IPFS</span>
+                    </div>
                     <div class="project-footer">
-                        <div class="project-tech-stack">
-                            <span>VUE.JS</span><span>MYSQL</span><span>NODE.JS</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            View Repository <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-bento-card">
-                <div class="project-visual">
-                    <img src="assets/tukangku-preview.png" alt="TUKANGKU">
-                </div>
-                <div class="project-info">
-                    <div class="repo-status-inline status-public">
-                        <i class="fas fa-globe-americas"></i> Public Repository
-                    </div>
-                    <h3>TUKANGKU</h3>
-                    <p>A specialized platform to find and manage local home improvement services.</p>
-                    <div class="project-footer">
-                        <div class="project-tech-stack">
-                            <span>VUE.JS</span><span>MYSQL</span><span>NODE.JS</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            View Repository <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-bento-card">
-                <div class="project-visual">
-                    <img src="assets/agentai-preview.png" alt="AGENT AI">
-                </div>
-                <div class="project-info">
-                    <div class="repo-status-inline status-public">
-                        <i class="fas fa-globe-americas"></i> Public Repository
-                    </div>
-                    <h3>AGENT AI</h3>
-                    <p>Intelligent agent chatbot interface for specialized data analysis and automation.</p>
-                    <div class="project-footer">
-                        <div class="project-tech-stack">
-                            <span>VUE.JS</span><span>MYSQL</span><span>NODE.JS</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            View Repository <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projects-stack-column">
-                
-                <div class="project-bento-card no-image">
-                    <div class="bg-icon-overlay">
-                        <i class="fas fa-poll"></i>
-                    </div>
-                    <div class="project-info">
-                        <div class="repo-status-inline status-public">
-                            <i class="fas fa-poll"></i> Public Repository
-                        </div>
-                        <h3>SURVEY APP</h3>
-                        <p>High-performance data tracking and internal survey management system.</p>
-                        <div class="project-footer">
-                            <div class="project-tech-stack">
-                                <span>VUE.JS</span><span>NODE.JS</span>
-                            </div>
-                            <a href="#" class="project-link">
-                            View Repository <i class="fab fa-github"></i>
+                        <div class="button-group">
+                            <a href="https://verichain-black.vercel.app/" class="project-link demo-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> VIEW DEMO
                             </a>
+                            
+                            <!-- Dropdown untuk multiple repositories -->
+                            <div class="repo-dropdown">
+                                <button class="project-link repo-dropdown-btn">
+                                    <i class="fab fa-github"></i> 
+                                    <span class="repo-text">REPO</span>
+                                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                                </button>
+                                <div class="repo-dropdown-content">
+                                    <div class="dropdown-header">
+                                        <i class="fas fa-link"></i> Repository Links
+                                    </div>
+                                    <a href="https://github.com/dipsyrara/TA-BE.git" target="_blank" rel="noopener noreferrer">
+                                        <i class="fas fa-server"></i> Backend API
+                                        <span class="repo-badge">express</span>
+                                    </a>
+                                    <a href="https://github.com/Zikra2244/TA-FE.git" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-react"></i> Frontend
+                                        <span class="repo-badge">react</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="project-bento-card coming-soon">
-                    <div class="project-info">
-                        <div class="repo-status-inline status-more">
-                            <i class="fas fa-rocket"></i> Coming Soon!!
-                        </div>
-                        <h3>MORE PROJECTS</h3>
-                        <p>Working on new things. Stay tuned!</p>
-                        <a href="#contact" class="btn-contact-pink">LET'S TALK</a>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </div>
-</section>
+                    <!-- TUKANGKU (Repo Only) -->
+                    <div class="project-bento-card">
+                        <div class="project-visual">
+                            <img src="assets/tukangku-preview.png" alt="TUKANGKU">
+                            <div class="project-status-badge repo-only">
+                                <i class="fas fa-code-branch"></i> REPO ONLY
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>TUKANGKU</h3>
+                            <p class="project-description">Mobile solution connecting homeowners with skilled workers for urgent architectural repairs across Indonesia.</p>
+                            <div class="project-tech-stack">
+                                <span>FLUTTER</span>
+                                <span>DART</span>
+                                <span>SUPABASE</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/farellkresnanda/TUBES-APB.git" class="project-link repo-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> VIEW REPOSITORY
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AGENT AI (Repo Only) -->
+                    <div class="project-bento-card">
+                        <div class="project-visual">
+                            <img src="assets/agentai-preview.png" alt="AGENT AIX">
+                            <div class="project-status-badge repo-only">
+                                <i class="fas fa-code-branch"></i> REPO ONLY (FRONTEND)
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AGENT AI</h3>
+                            <p class="project-description">AI-powered platform using RAG architecture to analyze technology needs for 500+ schools. Identifies sales leads for educational growth.</p>
+                            <div class="project-tech-stack">
+                                <span>NEXT.JS</span>
+                                <span>TAILWIND</span>
+                                <span>PYTHON</span>
+                                <span>LLM</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/kanjeeng/sekolah-agentai-fe-custom.git" class="project-link repo-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> VIEW REPOSITORY
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SURVEY APP (Repo Only) -->
+                    <div class="project-bento-card">
+                        <div class="project-visual">
+                            <div class="no-image-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="project-status-badge repo-only">
+                                <i class="fas fa-code-branch"></i> REPO ONLY
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>SURVEY APP</h3>
+                            <p class="project-description">Comprehensive full-stack platform for creating, managing, and analyzing surveys with robust OOP architecture.</p>
+                            <div class="project-tech-stack">
+                                <span>SPRING BOOT</span>
+                                <span>REACT.JS</span>
+                                <span>BOOTSTRAP</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/bagaskalih/TubesPBO" class="project-link repo-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> VIEW REPOSITORY
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stack Column with More Projects -->
+                    <div class="projects-stack-column">
+                        <!-- More Projects Card -->
+                        <div class="project-bento-card coming-soon">
+                            <div class="project-info">
+                                <div class="coming-soon-badge">
+                                    <i class="fas fa-rocket"></i> COMING SOON
+                                </div>
+                                <h3>MORE PROJECTS</h3>
+                                <p>Working on new things. Stay tuned for more exciting projects!</p>
+                                <a href="#contact" class="btn-contact-pink">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">✦ CONTACT ✦</h2>
+                
+                <div class="contact-grid-single">
+                    <!-- Contact Info Card -->
+                    <div class="contact-info glass-card">
+                        <div class="contact-glitch">
+                            <span class="glitch-text">LET'S CONNECT</span>
+                            <span class="glitch-text">LET'S CONNECT</span>
+                            <span class="glitch-text">LET'S CONNECT</span>
+                        </div>
+                        
+                        <p class="contact-tagline">
+                            <i class="fas fa-paper-plane" style="color: var(--primary);"></i>
+                            Have a project in mind? Let's create something amazing together!
+                        </p>
+                        
+                        <!-- Contact Details -->
+                        <div class="contact-details-wrapper">
+                            <div class="contact-item-large">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-item-content">
+                                    <span class="contact-label">Email</span>
+                                    <div class="contact-value-wrapper">
+                                        <a href="mailto:rdeantika8@gmail.com" class="contact-value">rdeantika8@gmail.com</a>
+                                        <i class="fas fa-copy copy-icon" onclick="copyEmail()" title="Copy email"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item-large">
+                                <i class="fas fa-map-pin"></i>
+                                <div class="contact-item-content">
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value">Bandung, Jawa Barat, Indonesia</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="contact-social-wrapper">
+                            <h3 class="social-heading">Find me on</h3>
+                            <div class="contact-social-items">
+                                <a href="https://github.com/dipsyrara" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="www.linkedin.com/in/ragil-deantika-rohmaniar-6124812a0" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://instagram.com/raaaaagil" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="https://wa.me/6289514294050" class="contact-social-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- FOOTER - Separate -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Ragil Deantika Rohmaniar. Built with passion.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>
+                    <i class="fas fa-code"></i>
+                    with 
+                    <i class="fas fa-heart" style="color: var(--primary);"></i>
+                    by Ragil Deantika Rohmaniar
+                </p>
+                <p class="copyright-small">
+                    &copy; 2025 • All rights reserved • 
+                    <span class="footer-badge">✦ v1.0 ✦</span>
+                </p>
+            </div>
         </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 
+    <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>
 
