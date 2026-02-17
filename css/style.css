@@ -2422,61 +2422,213 @@ body:hover .cursor-outline {
     }
 }
 
-/* Mobile Kecil (max-width: 480px) */
-@media (max-width: 480px) {
+/* ===== MOBILE FIRST OPTIMIZATION ===== */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
     /* Header */
-    .nav-menu {
+    .header {
+        padding: 8px 0;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
     }
 
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        order: 1;
+        width: 100%;
+    }
+
     .nav-menu a {
-        font-size: 0.65rem;
-        padding: 4px 6px;
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        letter-spacing: 1px;
+    }
+
+    .nav-menu a::before {
+        height: 1px;
     }
 
     .cv-button {
+        order: 2;
+        margin: 0;
         padding: 5px 12px;
         font-size: 0.65rem;
+        gap: 4px;
+        border-width: 1.5px;
     }
 
-    .cv-button span {
-        display: inline; /* Tetap tampil di mobile */
+    .cv-button i {
+        font-size: 0.7rem;
     }
 
-    /* Hero */
-    .hero-png {
-        height: 40vh;
+    /* Hero Section - FIXED */
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero-container {
+        top: 38%;
+        padding: 15px 0;
     }
 
     .big-title {
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        letter-spacing: -1px;
+        white-space: normal;
+        line-height: 1;
+        padding: 0 5px;
+    }
+
+    .main-text {
+        text-shadow: 0 0 15px rgba(242, 181, 181, 0.8),
+                     1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    /* Sembunyikan echo di mobile biar ga rame */
+    .echo-1, .echo-2 {
+        display: none;
+    }
+
+    .hero-image-wrapper {
+        margin-bottom: 5px;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-png {
+        height: 40vh;
+        max-height: 300px;
+    }
+
+    .hero-details {
+        bottom: 15px;
+        padding: 0 12px;
+        flex-direction: row;
+        align-items: flex-end;
     }
 
     .detail-info {
-        max-width: 60%;
+        transform: rotate(0deg);
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        background: rgba(242, 181, 181, 0.15);
+        max-width: 65%;
+    }
+
+    .detail-info i {
+        font-size: 0.65rem;
+    }
+
+    .detail-info strong {
+        font-size: 0.7rem;
+        display: inline;
+        margin-left: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .detail-year {
         font-size: 1.5rem;
+        -webkit-text-stroke: 1px var(--primary);
+        opacity: 0.8;
     }
 
-    /* Projects */
+    /* About Section - sudah ada tapi kita perkuat */
+    .about-card {
+        padding: 20px;
+    }
+
+    .bio-card p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .expertise-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .skill-tag {
+        padding: 4px 10px;
+        font-size: 0.65rem;
+    }
+
+    /* Experience Section - perbaikan */
+    .experience-layout {
+        gap: 30px;
+    }
+
+    .sidebar-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .timeline-row {
+        margin-bottom: 30px;
+    }
+
+    .year {
+        font-size: 1rem;
+        margin-right: 8px;
+    }
+
+    .role {
+        font-size: 0.8rem;
+    }
+
+    .desc-column p {
+        font-size: 0.75rem;
+    }
+
+    /* Projects Section - perbaikan */
+    .projects-horizontal-scroll {
+        gap: 12px;
+        padding: 15px 0 25px;
+    }
+
     .project-bento-card {
-        min-width: 240px;
-        max-width: 240px;
+        min-width: 260px;
+        max-width: 260px;
     }
 
     .project-visual {
-        height: 140px;
+        height: 150px;
+    }
+
+    .project-status-badge {
+        padding: 4px 8px;
+        font-size: 0.6rem;
+    }
+
+    .project-info {
+        padding: 15px;
     }
 
     .project-info h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        margin-bottom: 6px;
     }
 
     .project-description {
         font-size: 0.7rem;
         -webkit-line-clamp: 2;
+        min-height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .project-tech-stack {
+        gap: 4px;
+        margin-bottom: 12px;
     }
 
     .project-tech-stack span {
@@ -2484,39 +2636,208 @@ body:hover .cursor-outline {
         font-size: 0.55rem;
     }
 
-    /* Contact */
+    .button-group {
+        gap: 6px;
+        flex-direction: row;
+    }
+
+    .project-link {
+        padding: 6px 12px;
+        font-size: 0.6rem;
+        gap: 5px;
+    }
+
+    .repo-dropdown-btn {
+        padding: 6px 10px !important;
+        min-width: 100px;
+        font-size: 0.6rem;
+    }
+
+    /* Projects Stack Column */
+    .projects-stack-column {
+        min-width: 260px;
+        max-width: 260px;
+        gap: 12px;
+    }
+
+    .project-bento-card.coming-soon {
+        min-height: 280px;
+    }
+
+    .coming-soon .project-info {
+        padding: 20px;
+    }
+
+    .coming-soon-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+        margin-bottom: 15px;
+    }
+
+    .coming-soon h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .coming-soon p {
+        font-size: 0.8rem;
+        max-width: 200px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .glass-card {
+        padding: 25px 15px;
+        border-radius: 30px;
+    }
+
+    .contact-glitch {
+        font-size: 1.8rem;
+        height: 36px;
+        margin-bottom: 5px;
+    }
+
+    .contact-tagline {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-tagline i {
+        font-size: 0.8rem;
+    }
+
     .contact-details-wrapper {
         gap: 12px;
+        margin: 10px 0;
+    }
+
+    .contact-item-large {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .contact-item-large i:first-child {
+        font-size: 1rem;
+    }
+
+    .contact-label {
+        font-size: 0.6rem;
+    }
+
+    .contact-value {
+        font-size: 0.75rem;
+    }
+
+    .copy-icon {
+        font-size: 0.7rem;
+        padding: 3px;
+    }
+
+    .social-heading {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .social-heading::before,
+    .social-heading::after {
+        font-size: 0.7rem;
+        margin: 0 5px;
     }
 
     .contact-social-items {
-        flex-direction: column;
-        align-items: center;
+        gap: 8px;
     }
 
     .contact-social-link {
-        width: 100%;
-        max-width: 200px;
-        justify-content: center;
+        padding: 6px 15px;
+    }
+
+    .contact-social-link i {
+        font-size: 0.8rem;
+    }
+
+    .contact-social-link span {
+        font-size: 0.65rem;
     }
 
     /* Footer */
+    .footer {
+        padding: 30px 0 20px;
+    }
+
     .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+
+    .footer-links a::before {
+        height: 1px;
+    }
+
+    .footer-copyright p {
+        font-size: 0.75rem;
+        margin-bottom: 5px;
+    }
+
+    .footer-copyright i {
+        font-size: 0.7rem;
+    }
+
+    .copyright-small {
+        font-size: 0.6rem;
+        gap: 5px;
+    }
+
+    .footer-badge {
+        padding: 1px 6px;
+        font-size: 0.55rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
 }
 
-/* Landscape Mode untuk HP */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero {
-        min-height: auto;
-        padding-top: 60px;
+/* Mobile Kecil (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Header */
+    .nav-menu {
+        gap: 6px;
     }
 
-    .hero-png {
-        height: 60vh;
+    .nav-menu a {
+        font-size: 0.6rem;
+        padding: 3px 5px;
+    }
+
+    .cv-button {
+        padding: 4px 10px;
+        font-size: 0.6rem;
+    }
+
+    .cv-button span {
+        display: inline;
+    }
+
+    .cv-button i {
+        font-size: 0.65rem;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 85vh;
     }
 
     .hero-container {
@@ -2524,11 +2845,197 @@ body:hover .cursor-outline {
     }
 
     .big-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .hero-png {
+        height: 35vh;
+        max-height: 220px;
+    }
+
+    .hero-details {
+        bottom: 10px;
+        padding: 0 8px;
+    }
+
+    .detail-info {
+        padding: 4px 8px;
+        font-size: 0.6rem;
+        max-width: 70%;
+    }
+
+    .detail-info i {
+        display: none;
+    }
+
+    .detail-info strong {
+        font-size: 0.65rem;
+    }
+
+    .detail-year {
+        font-size: 1.2rem;
+    }
+
+    /* Projects */
+    .project-bento-card {
+        min-width: 220px;
+        max-width: 220px;
+    }
+
+    .projects-stack-column {
+        min-width: 220px;
+        max-width: 220px;
+    }
+
+    .project-visual {
+        height: 130px;
+    }
+
+    .project-info {
+        padding: 12px;
+    }
+
+    .project-info h3 {
+        font-size: 1rem;
+    }
+
+    .project-description {
+        font-size: 0.65rem;
+        min-height: 35px;
+    }
+
+    .project-tech-stack span {
+        padding: 2px 5px;
+        font-size: 0.5rem;
+    }
+
+    .project-link {
+        padding: 5px 10px;
+        font-size: 0.55rem;
+    }
+
+    .repo-dropdown-btn {
+        padding: 5px 8px !important;
+        min-width: 80px;
+    }
+
+    .project-bento-card.coming-soon {
+        min-height: 240px;
+    }
+
+    .coming-soon-badge {
+        padding: 4px 10px;
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+
+    .coming-soon h3 {
+        font-size: 1.2rem;
+    }
+
+    .coming-soon p {
+        font-size: 0.7rem;
+        max-width: 180px;
+    }
+
+    /* Contact */
+    .contact-glitch {
+        font-size: 1.5rem;
+        height: 30px;
+    }
+
+    .contact-tagline {
+        font-size: 0.75rem;
+    }
+
+    .contact-item-large {
+        padding: 8px;
+    }
+
+    .contact-value {
+        font-size: 0.7rem;
+    }
+
+    .contact-social-link {
+        padding: 5px 12px;
+    }
+
+    .contact-social-link i {
+        font-size: 0.7rem;
+    }
+
+    .contact-social-link span {
+        font-size: 0.6rem;
+    }
+
+    /* Footer */
+    .footer-links {
+        gap: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        font-size: 0.65rem;
+    }
+
+    .footer-copyright p {
+        font-size: 0.7rem;
+    }
+
+    .copyright-small {
+        font-size: 0.55rem;
+        flex-direction: row;
+    }
+}
+
+/* Landscape Mode untuk HP */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 80px 0 20px;
+    }
+
+    .hero-container {
+        position: relative;
+        top: 0;
+        transform: translate(-50%, 0);
+        margin-bottom: 20px;
+    }
+
+    .hero-png {
+        height: 50vh;
+        max-height: 250px;
     }
 
     .hero-details {
         position: relative;
-        margin-top: 20px;
+        margin-top: 10px;
+        bottom: auto;
+    }
+
+    .project-bento-card {
+        min-width: 240px;
+    }
+
+    .contact-social-items {
+        flex-direction: row;
+    }
+}
+
+/* Tablet Medium (max-width: 600px) */
+@media (max-width: 600px) {
+    .project-bento-card {
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    .projects-stack-column {
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    .contact-social-link {
+        padding: 5px 12px;
     }
 }
